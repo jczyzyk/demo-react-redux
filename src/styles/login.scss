@@ -8,8 +8,13 @@ body {
     justify-content: center;
     height: 100%;
 
-    .login{
-        
+    .actions-container{
+        float:right;
+        margin-bottom: 5px;
+    }
+    .login-btn{
+        color: $login-btn-txt-color;
+        float:right;
     }
 }
 

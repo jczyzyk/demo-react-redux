@@ -18,7 +18,9 @@ class Login extends React.Component {
         this.email = '';
         this.password = '';
     }
-
+    onSubmit(){
+        alert('thanks for login in!');
+    }
     render() {
         return (
             <div className="login-container">
@@ -35,12 +37,13 @@ class Login extends React.Component {
                         <TextField hintText="Password" type="password" />
                         <ErrorManager text={this.props.errorProcessing} />
                     </CardText>
-                    <CardActions>
+                    <CardActions className="actions-container">
                         <Button
                             label="Login"
                             primary={true}
-                            onTouchTap={() => this.onSubmit()}
-                            isProcessing={this.props.isProcessing}>
+                            onClick={() => this.onSubmit()}
+                            isProcessing={this.props.isProcessing}
+                            className="login-btn">
                             Login
                          </Button>
                     </CardActions>
@@ -64,7 +67,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
     return {
-        isProcessing: true, //state.main.isProcessing,
+        isProcessing: state.main.isProcessing,
         errorProcessing: state.main.errorMessage || ""
     }
 

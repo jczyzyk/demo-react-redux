@@ -51,8 +51,9 @@ export const Button = (props) => {
       <RaisedButton
         primary={true}
         onTouchTap={() => props.onClick()}
+        label={props.label}
       >
-        {props.isProcessing ? <Loader /> : props.children}
+        {props.isProcessing ? <Loader /> : null}
       </RaisedButton>
   )
 }
