@@ -24,7 +24,7 @@ class Login extends React.Component {
             <div className="login-container">
                 <Card className="login" >
                     <CardHeader
-                        title="Vern Mind"
+                        title="Login"
                         subtitle=""
                         actAsExpander={false}
                         showExpandableButton={false}
