@@ -1,0 +1,9 @@
+@import 'colors';
+
+html, body, .root, .root > [data-reactroot] {
+    margin:0;
+    height: 100%;
+}
+body {
+    background-color: $body-bg;
+}
