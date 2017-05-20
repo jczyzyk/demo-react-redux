@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './home';
 import Login from './login';
@@ -16,13 +16,21 @@ class Root extends React.Component {
   constructor(props) {
     super(props);
   }
+  isLoggedIn() {
+    let account = this.props.store.getState().account;
+    if(account && account.token && account.token.length > 0 && account.expDate > (new Date().getTime())){
+      return true;
+    } else{
+      return false;
+    }
+  }
   render() {
     return (
       <MuiThemeProvider>
         <Provider store={this.props.store}>
           <Router>
             <div>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" render={ () =>  (this.isLoggedIn() ? <Home /> : <Redirect to="/login" />) } />
               <Route path="/login" component={Login} />
             </div>
           </Router>

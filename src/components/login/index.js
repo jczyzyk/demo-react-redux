@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import { doLogin } from '../../actions/account';
+import { doLogin } from '../../actions/account';
 import { Button } from '../common/buttons';
 import { ValidateInput } from '../common/validation/validateInput';
 import { ErrorManager } from '../common/errorManager';

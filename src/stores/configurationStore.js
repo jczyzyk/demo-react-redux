@@ -11,8 +11,7 @@ const configureStore = () => {
     middlewares.push(createLogger());
   }
 
-//const enhancer = compose(applyMiddleware(...middlewares), persistState(['config']));
-const enhancer = compose(applyMiddleware(...middlewares));
+const enhancer = compose(applyMiddleware(...middlewares), persistState(['account']));
 
   return createStore(mainReducer, enhancer);
 };
