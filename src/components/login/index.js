@@ -19,7 +19,7 @@ class Login extends React.Component {
         this.password = '';
     }
     onSubmit(){
-        alert('thanks for login in!');
+        this.props.doLogin({ username: 'jony', password:'123'}, this.props.history);
     }
     render() {
         return (
@@ -55,8 +55,8 @@ class Login extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        doLogin: (user, router) => {
-            dispatch(doLogin(user, router));
+        doLogin: (user, history) => {
+            dispatch(doLogin(user, history));
         },
         logout: () => {
             dispatch({ type: actionType.DO_LOGOUT });
