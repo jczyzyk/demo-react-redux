@@ -13,8 +13,8 @@ import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import '../../styles/login.scss';
 
 class Login extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.email = '';
         this.password = '';
     }
@@ -26,13 +26,13 @@ class Login extends React.Component {
             <div className="login-container">
                 <Card className="login" >
                     <CardHeader
-                        title="Login"
+                        title="Harvester Admin"
                         subtitle=""
                         actAsExpander={false}
                         showExpandableButton={false}
                     />
                     <CardText expandable={false}>
-                        <TextField hintText="Email" type="email" errorText="" />
+                        <TextField hintText="Username" type="text" errorText="" />
                         <br />
                         <TextField hintText="Password" type="password" />
                         <ErrorManager text={this.props.errorProcessing} />

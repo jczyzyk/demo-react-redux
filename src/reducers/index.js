@@ -15,7 +15,8 @@ const account = (state = { errorMessage: "" }, action) => {
     case 'DO_LOGIN_REQUEST':
       return {
         ...state,
-        errorMessage: ""
+        errorMessage: "",
+        isProcessing: true
       }
     case 'DO_LOGIN_FAILURE':
       return {
@@ -46,6 +47,11 @@ const main = (state = { isProcessing: false, errorMessage: '' }, action) => {
       return {
         ...state,
         isProcessing: false
+      }
+    case 'TOGGLE_MENU':
+      return {
+        ...state,
+        isMenuOpen: !state.isMenuOpen
       }
     default:
       return state;

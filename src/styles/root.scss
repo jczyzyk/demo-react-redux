@@ -7,3 +7,10 @@ html, body, .root, .root > [data-reactroot] {
 body {
     background-color: $body-bg;
 }
+
+.mainView{
+    width: 100vw;
+    height: calc(100vh - 64px);
+    background-color: #FFF;
+    padding: 20px;
+}

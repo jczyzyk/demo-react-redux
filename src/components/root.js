@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './home';
 import Login from './login';
+import RobotManager from './robots'
 import '../styles/root.scss';
 
 require('normalize.css/normalize.css');
@@ -30,7 +31,9 @@ class Root extends React.Component {
         <Provider store={this.props.store}>
           <Router>
             <div>
-              <Route exact path="/" render={ () =>  (this.isLoggedIn() ? <Home /> : <Redirect to="/login" />) } />
+              <Route path="/" render={ () =>  (this.isLoggedIn() ? <Home /> : <Redirect to="/login" />) } />
+              <Route path="/robots" children={ ( {match} ) =>  match && <RobotManager /> }/>
+              
               <Route path="/login" component={Login} />
             </div>
           </Router>
